@@ -1,4 +1,4 @@
-name: mod_ex
+name: mod_ex_gpu
 channels:
   - defaults
 dependencies:
