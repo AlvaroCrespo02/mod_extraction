@@ -49,7 +49,7 @@ def plot_spectrogram(audio: T,
     if ax is None:
         plt.imshow(spec, aspect="auto", interpolation="none")
         plt.title(title)
-        plt.show()
+        # plt.show()
     else:
         ax.imshow(spec, aspect="auto", interpolation="none")
         if title is not None:
@@ -63,7 +63,7 @@ def plot_spectrogram(audio: T,
             transform = Fade(fade_in_len=fade_n_samples, fade_out_len=fade_n_samples, fade_shape="linear")
             audio = transform(audio)
         save_path = os.path.join(save_dir, save_name)
-        torchaudio.save(save_path, audio, sr)
+        # torchaudio.save(save_path, audio, sr)
 
     return spec
 
@@ -92,9 +92,9 @@ def plot_mod_sig(mod_sig_hat: T,
         plt.title(f"{mae * 100:.1f}% L1 Error", fontsize=28)
 
     plt.tight_layout()
-    if save_name:
-        plt.savefig(os.path.join(save_dir, f"{save_name}.svg"))
-    plt.show()
+    # if save_name:
+        # plt.savefig(os.path.join(save_dir, f"{save_name}.svg"))
+    # plt.show()
 
 
 def plot_mod_sig_callback(ax: Subplot,
