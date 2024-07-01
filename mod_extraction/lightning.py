@@ -21,6 +21,7 @@ log.setLevel(level=os.environ.get('LOGLEVEL', 'INFO'))
 
 
 class BaseLightingModule(pl.LightningModule):
+
     default_loss_dict = {"l1": 1.0, "mse": 0.0}
 
     def __init__(self, loss_dict: Optional[Dict[str, float]] = None) -> None:
@@ -424,6 +425,7 @@ class TBPTTLFOEffectModeling(BaseLightingModule):
         return batch_loss, data_dict, fx_params
 
     def training_step(self, batch: (T, T, Optional[T], Optional[Dict[str, T]]), batch_idx: int) -> Optional[T]:
+        log.info(f"Processing batch {batch_idx}")
         result = self.common_step(batch, is_training=True)
         if result is None:
             return None
