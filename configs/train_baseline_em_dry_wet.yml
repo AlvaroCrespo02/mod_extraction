@@ -15,9 +15,9 @@ custom:
   cpu_batch_size: 8
 
 trainer:
-  accelerator: gpu
+  accelerator: cpu
   benchmark: false
-  devices: [4]
+  devices: [1]
   max_epochs: 400
 
 data:
