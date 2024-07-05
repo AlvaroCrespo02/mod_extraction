@@ -23,7 +23,7 @@ trainer:
 data:
   class_path: mod_extraction.data_modules.RandomAudioChunkDryWetDataModule
   init_args:
-    batch_size: 250
+    batch_size: 8
     num_workers: 8
     train_num_examples_per_epoch: 8000
     val_num_examples_per_epoch: 2000
