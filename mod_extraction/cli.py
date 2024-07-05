@@ -21,7 +21,7 @@ log.setLevel(level=os.environ.get('LOGLEVEL', 'INFO'))
 class CustomLightningCLI(LightningCLI):
     # TODO(cm): move to yaml
     trainer_defaults = {
-        "accelerator": "gpu",
+        "accelerator": "cpu",
         "callbacks": [
             LearningRateMonitor(logging_interval="step"),
             LogSpecAndModSigCallback(n_examples=4, log_wet_hat=True),
